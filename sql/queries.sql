@@ -56,4 +56,7 @@ EXECUTE FUNCTION maj_statut();
 
 -- 10 ème test, sert a ajouté une maintenance
 INSERT INTO maintenance (date_intervention, type_intervention, id_vehicule)
-VALUES (CURRENT_DATE, 'Batterie', 1);
+SELECT CURRENT_DATE, 'Batterie', id_vehicule
+FROM vehicule
+LIMIT 1;
+
